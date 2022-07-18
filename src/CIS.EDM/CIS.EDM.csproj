@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <TargetFramework>netcoreapp3.1</TargetFramework>
+      <AssemblyName>CIS.EDM</AssemblyName>
+      <RootNamespace>CIS.EDM</RootNamespace>
+      <Title>CIS.EDM</Title>
+      <SignAssembly>False</SignAssembly>
+      <AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+      <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+      <DocumentationFile>bin\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+      <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+    <!-- Include symbols into package for debugging -->
+    <PropertyGroup>
+        <!-- This command creates external file (snupkg) with .pdb next to nuget file (nupkg) -->
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    
+    <!-- Package info -->
+    <PropertyGroup>
+        <Product>The base EDM library</Product>
+        <Description>The base project for integration with EDM API (Electronic document management)</Description>
+        <PackageId>Spoleto.CIS.EDM</PackageId>
+        <Authors>Oleg Nadymov</Authors>
+        <Company>SPOLETO Software Development</Company>
+        <PackageIcon>EDM.png</PackageIcon>
+        <PackageProjectUrl>https://spoleto.ru</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/spoleto-software/CIS.EDM</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>EDM; Electronic document management</PackageTags>
+		<Copyright>Copyright © $([System.DateTime]::Now.Year.ToString())</Copyright>
+		<PackageReleaseNotes></PackageReleaseNotes>
+		<Version>$([System.DateTime]::Now.AddYears(-2020).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</Version>
+		<AssemblyVersion>$([System.DateTime]::Now.AddYears(-2020).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</AssemblyVersion>
+		<FileVersion>$([System.DateTime]::Now.AddYears(-2020).Year.ToString()).$([System.DateTime]::Now.ToString("MM.dd.HHmm"))</FileVersion>
+	</PropertyGroup>
+
+    <ItemGroup>
+        <None Include="Resources\EDM.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+</Project>
