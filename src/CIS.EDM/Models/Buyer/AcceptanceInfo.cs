@@ -47,6 +47,6 @@ namespace CIS.EDM.Models.Buyer
         /// <summary>
         /// Текстовое представление объекта.
         /// </summary>
-        public override string ToString() => $"{(!String.IsNullOrEmpty(OperationName) ? OperationName : OperationNameInfo)}.";
+        public override string ToString() => $"{(!String.IsNullOrEmpty(OperationName) ? OperationName : OperationNameInfo.ToString())}.";
     }
 }
