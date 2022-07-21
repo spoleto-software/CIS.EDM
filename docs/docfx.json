@@ -61,7 +61,7 @@
     "globalMetadataFiles": [],
 	"globalMetadata": {
       "_appTitle": "Spoleto.CIS.EDM",
-	  "_appName": "The base EDM library",		
+	  "_appName": "Базовая библиотека для интеграции с ЭДО",		
       /*"_appLogoPath": "images/Logo.png",
       "_appFaviconPath": "images/Logo.png",*/
       "_appFooter": "<strong>SPOLETO Software Development</strong>",
