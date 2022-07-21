@@ -8,5 +8,5 @@ https://spoleto-software.github.io/CIS.EDM.CRPT/
 
 ## Ресурсы
 
- - Исходный код: https://github.com/spoleto-software/CIS.EDM
+ - Исходный код: https://github.com/spoleto-software/CIS.EDM/
  - Nuget пакет: https://www.nuget.org/packages/Spoleto.CIS.EDM/
