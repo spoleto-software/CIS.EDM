@@ -62,8 +62,8 @@
 	"globalMetadata": {
       "_appTitle": "Spoleto.CIS.EDM",
 	  "_appName": "C# SDK для ЭДО",		
-      /*"_appLogoPath": "images/Logo.png",
-      "_appFaviconPath": "images/Logo.png",*/
+      "_appLogoPath": "images/Logo.png",
+      "_appFaviconPath": "images/Logo.png",
       "_appFooter": "<strong>SPOLETO Software Development</strong>",
 	  "_copyrightFooter": "Copyright © SPOLETO, 2022. Все права защищены.",
 	  "_enableSearch": true,
