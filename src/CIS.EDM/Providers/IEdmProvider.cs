@@ -24,8 +24,8 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
         /// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
-        /// <returns>Идентификатор сообщения.</returns>
-        string PostUniversalTransferDocument(T settings, SellerUniversalTransferDocument dataContract, bool isDraft = false)
+        /// <returns>Информация об отправке сообщения.</returns>
+        ResultInfo PostUniversalTransferDocument(T settings, SellerUniversalTransferDocument dataContract, bool isDraft = false)
             => PostUniversalTransferDocumentAsync(settings, dataContract, isDraft).GetAwaiter().GetResult();
 
         /// <summary>
@@ -35,8 +35,8 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
         /// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
-        /// <returns>Идентификатор сообщения.</returns>
-        Task<string> PostUniversalTransferDocumentAsync(T settings, SellerUniversalTransferDocument dataContract, bool isDraft = false);
+        /// <returns>Информация об отправке сообщения.</returns>
+        Task<ResultInfo> PostUniversalTransferDocumentAsync(T settings, SellerUniversalTransferDocument dataContract, bool isDraft = false);
 
         /// <summary>
         /// Добавление извещения о получении к документу
@@ -44,7 +44,7 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация покупателя.</param>
         /// <returns>Идентификатор созданного извещения о получении</returns>
-        string ReceiptUniversalTransferDocument(T settings, BuyerUniversalTransferDocument dataContract)
+        ResultInfo ReceiptUniversalTransferDocument(T settings, BuyerUniversalTransferDocument dataContract)
             => ReceiptUniversalTransferDocumentAsync(settings, dataContract).GetAwaiter().GetResult();
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация покупателя.</param>
         /// <returns>Идентификатор созданного извещения о получении</returns>
-        Task<string> ReceiptUniversalTransferDocumentAsync(T settings, BuyerUniversalTransferDocument dataContract);
+        Task<ResultInfo> ReceiptUniversalTransferDocumentAsync(T settings, BuyerUniversalTransferDocument dataContract);
 
         /// <summary>
         /// Получение содержимого XML входящего документа
@@ -124,10 +124,10 @@ namespace CIS.EDM.Providers
         /// <returns>Список исходящих документов</returns>
         Task<DocumentCollection> GetOutgoingDocumentListAsync(T settings, DocumentCollectionSearchModel searchModel = null);
 
-        Task<string> IEdmProvider.PostUniversalTransferDocumentAsync(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft)
+        Task<ResultInfo> IEdmProvider.PostUniversalTransferDocumentAsync(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft)
             => PostUniversalTransferDocumentAsync((T)settings, dataContract, isDraft);
 
-        Task<string> IEdmProvider.ReceiptUniversalTransferDocumentAsync(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
+        Task<ResultInfo> IEdmProvider.ReceiptUniversalTransferDocumentAsync(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
             => ReceiptUniversalTransferDocumentAsync((T)settings, dataContract);
 
         Task<string> IEdmProvider.GetIncomingDocumentAsync(IEdmOption settings, string documentId)
@@ -170,8 +170,8 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
         /// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
-        /// <returns>Идентификатор сообщения.</returns>
-        string PostUniversalTransferDocument(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft = false)
+        /// <returns>Информация об отправке сообщения.</returns>
+        ResultInfo PostUniversalTransferDocument(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft = false)
             => PostUniversalTransferDocumentAsync(settings, dataContract, isDraft).GetAwaiter().GetResult();
 
         /// <summary>
@@ -181,8 +181,8 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
         /// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
-        /// <returns>Идентификатор сообщения.</returns>
-        Task<string> PostUniversalTransferDocumentAsync(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft = false);
+        /// <returns>Информация об отправке сообщения.</returns>
+        Task<ResultInfo> PostUniversalTransferDocumentAsync(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft = false);
 
         /// <summary>
         /// Добавление извещения о получении к документу
@@ -190,7 +190,7 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация покупателя.</param>
         /// <returns>Идентификатор созданного извещения о получении</returns>
-        string ReceiptUniversalTransferDocument(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
+        ResultInfo ReceiptUniversalTransferDocument(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
             => ReceiptUniversalTransferDocumentAsync(settings, dataContract).GetAwaiter().GetResult();
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace CIS.EDM.Providers
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация покупателя.</param>
         /// <returns>Идентификатор созданного извещения о получении</returns>
-        Task<string> ReceiptUniversalTransferDocumentAsync(IEdmOption settings, BuyerUniversalTransferDocument dataContract);
+        Task<ResultInfo> ReceiptUniversalTransferDocumentAsync(IEdmOption settings, BuyerUniversalTransferDocument dataContract);
 
         /// <summary>
         /// Получение содержимого XML входящего документа
