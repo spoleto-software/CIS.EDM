@@ -1,4 +1,6 @@
-﻿namespace CIS.EDM.Models
+﻿using System;
+
+namespace CIS.EDM.Models
 {
     /// <summary>
     /// Информация об отправке сообщения в систему электронного документооборота.
@@ -16,8 +18,13 @@
         public string Content { get; set; }
 
         /// <summary>
+        /// Ошибка отправки сообщения.
+        /// </summary>
+        public Exception Exception { get; set; }
+
+        /// <summary>
         /// Текстовое представление объекта.
         /// </summary>
-        public override string ToString() => Id ?? Content;
+        public override string ToString() => Id ?? Exception?.Message;
     }
 }
