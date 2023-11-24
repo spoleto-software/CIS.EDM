@@ -11,12 +11,18 @@ namespace CIS.EDM.Models
         /// Идентификатор получателя в системе ЭДО оператора
         /// </summary>
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
-        /// <summary>
-        /// ИНН получателя
-        /// </summary>
-        [JsonPropertyName("inn")]
+		/// <summary>
+		/// Доп. идентификатор
+		/// </summary>
+		[JsonPropertyName("extra_id")]
+		public string ExtraId { get; set; }
+
+		/// <summary>
+		/// ИНН получателя
+		/// </summary>
+		[JsonPropertyName("inn")]
         public string Inn { get; set; }
 
         /// <summary>
