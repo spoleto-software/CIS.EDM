@@ -13,9 +13,9 @@ namespace CIS.EDM.Models.Seller
     /// <value><b>Файл</b> - сокращенное наименование (код) элемента.</value>
     public class SellerUniversalTransferDocument : UniversalTransferDocumentBase
     {
-        internal const string FileIdPattern = "ON_NSCHFDOPPR";
-        internal const string FileWithProcIdPattern = "ON_NSCHFDOPPRPROS";
-        internal const string FileWithMarkIdPattern = "ON_NSCHFDOPPRMARK";
+        public const string FileIdPattern = "ON_NSCHFDOPPR";
+		public const string FileWithProcIdPattern = "ON_NSCHFDOPPRPROS";
+		public const string FileWithMarkIdPattern = "ON_NSCHFDOPPRMARK";
 
         /// <summary>
         /// Код документа по КНД

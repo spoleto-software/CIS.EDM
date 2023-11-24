@@ -12,9 +12,9 @@ namespace CIS.EDM.Models.Buyer
     /// <value><b>Файл</b> - сокращенное наименование (код) элемента.</value>
     public class BuyerUniversalTransferDocument : UniversalTransferDocumentBase
     {
-        internal const string FileIdPattern = "ON_NSCHFDOPPOK";
-        internal const string FileWithProcIdPattern = "ON_NSCHFDOPPOKPROS";
-        internal const string FileWithMarkIdPattern = "ON_NSCHFDOPPOKMARK";
+		public const string FileIdPattern = "ON_NSCHFDOPPOK";
+		public const string FileWithProcIdPattern = "ON_NSCHFDOPPOKPROS";
+		public const string FileWithMarkIdPattern = "ON_NSCHFDOPPOKMARK";
 
         /// <summary>
         /// Идентификатор электронного документа продавца (не файла).
