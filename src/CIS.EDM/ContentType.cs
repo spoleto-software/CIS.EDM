@@ -39,5 +39,10 @@
         /// "application/octet-stream"
         /// </summary>
         public const string OctetStream = "application/octet-stream";
-    }
+
+		/// <summary>
+		/// "application/zip"
+		/// </summary>
+		public const string Zip = "application/zip";
+	}
 }
