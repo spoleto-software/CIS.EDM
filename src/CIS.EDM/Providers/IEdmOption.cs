@@ -10,10 +10,15 @@
         /// </summary>
         string ServiceUrl { get; set; }
 
-        /// <summary>
-        /// Публичный отпечаток сертификата.
-        /// </summary>
-        string CertificateThumbprint { get; set; }
+		/// <summary>
+		/// Адрес сервиса аутентификации.
+		/// </summary>
+		string AuthUrl { get; set; }
+
+		/// <summary>
+		/// Публичный отпечаток сертификата.
+		/// </summary>
+		string CertificateThumbprint { get; set; }
 
         /// <summary>
         /// Валидация настроек (проверка, что указаны все обязательные параметры).
