@@ -16,9 +16,19 @@
         Zero,
 
         /// <summary>
-        /// "10%"
+        /// "5%"
         /// </summary>
-        TenPercent,
+		FivePercent,
+
+        /// <summary>
+        /// "7%"
+        /// </summary>
+		SevenPercent,
+
+		/// <summary>
+		/// "10%"
+		/// </summary>
+		TenPercent,
 
         /// <summary>
         /// "18%"
