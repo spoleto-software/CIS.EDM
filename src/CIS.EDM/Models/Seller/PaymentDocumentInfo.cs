@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller
     /// Сведения о платежно-расчетном документе
     /// </summary>
     /// <value><b>СвПРД</b> - сокращенное наименование (код) элемента.</value>
-    public class PaymentDocumentInfo
+    public record PaymentDocumentInfo
     {
         /// <summary>
         /// Дата составления платежно-расчетного документа

@@ -1,10 +1,12 @@
-﻿namespace CIS.EDM.Models.Seller
+﻿using CIS.EDM.Models.Common;
+
+namespace CIS.EDM.Models.Seller
 {
     /// <summary>
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/ab3f6116676a0f2964dfee23912635005dc5ed4e/#dst101527">Сведения о физическом лице.</see>
     /// </summary>
     /// <value><b>ФЛ</b> - сокращенное наименование (код) элемента.</value>
-    public class PhysicalPerson : Person
+    public record PhysicalPerson : Person
     {
         /// <summary>
         /// Реквизиты свидетельства о государственной регистрации индивидуального предпринимателя, выдавшего доверенность физическому лицу на подписание счета-фактуры.

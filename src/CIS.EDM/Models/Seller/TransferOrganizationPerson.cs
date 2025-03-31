@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CIS.EDM.Models.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models.Seller
 {
@@ -6,7 +7,7 @@ namespace CIS.EDM.Models.Seller
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/4c791535153369a6c6112d6e5056361f8439d072/#dst100973">Представитель организации</see>, которой доверена отгрузка товаров (передача результатов работ), передача имущественных прав (предъявление оказанных услуг).
     /// </summary>
     /// <value><b>ПредОргПер</b> - сокращенное наименование (код) элемента.</value>
-    public class TransferOrganizationPerson : Person
+    public record TransferOrganizationPerson : Person
     {
         /// <summary>
         /// Должность

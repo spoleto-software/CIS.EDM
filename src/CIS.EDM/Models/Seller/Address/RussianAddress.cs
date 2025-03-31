@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller.Address
     /// Адрес, указанный в Едином государственном реестре юридических лиц/почтовый адрес/адрес места жительства индивидуального предпринимателя (реквизиты адреса на территории Российской Федерации).
     /// </summary>
     /// <value><b>АдрРФ</b> - сокращенное наименование (код) элемента.</value>
-    public class RussianAddress
+    public record RussianAddress
     {
         /// <summary>
         /// Индекс.
@@ -14,18 +14,25 @@ namespace CIS.EDM.Models.Seller.Address
         /// <value><b>Индекс</b> - сокращенное наименование (код) элемента.</value>
         public string ZipCode { get; set; }
 
-        /// <summary>
-        /// Код региона.
-        /// </summary>
-        /// <value><b>КодРегион</b> - сокращенное наименование (код) элемента.</value>
-        [Required]
-        public string RegionCode { get; set; }
+		/// <summary>
+		/// Регион.
+		/// </summary>
+		/// <value><b>НаимРегион</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
+        public string Region { get; set; }
 
-        /// <summary>
-        /// Район.
-        /// </summary>
-        /// <value><b>Район</b> - сокращенное наименование (код) элемента.</value>
-        public string Territory { get; set; }
+		/// <summary>
+		/// Код региона.
+		/// </summary>
+		/// <value><b>КодРегион</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
+		public string RegionCode { get; set; }
+
+		/// <summary>
+		/// Район.
+		/// </summary>
+		/// <value><b>Район</b> - сокращенное наименование (код) элемента.</value>
+		public string Territory { get; set; }
 
         /// <summary>
         /// Город.

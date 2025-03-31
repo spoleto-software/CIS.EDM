@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CIS.EDM.Models
+namespace CIS.EDM.Models.Common
 {
     /// <summary>
-    /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/9081f38f12fc37cca69db97124ff9f5d8dc9a0b2/#dst101656">Физическое лицо (либо ИП).</see>
+    /// Физическое лицо (либо ИП).
     /// </summary>
     /// <value><b>ФИО</b> - сокращенное наименование (код) элемента.</value>
-    public class Person
+    public record Person
     {
         /// <summary>
         /// Фамилия.

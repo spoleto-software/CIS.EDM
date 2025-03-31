@@ -4,7 +4,7 @@
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/1a87107a5d6812641a592678120e6042bfbb5c85/#dst101353">Сведения о банке.</see>
     /// </summary>
     /// <value><b>СвБанк</b> - сокращенное наименование (код) элемента.</value>
-    public class BankDetails
+    public record BankDetails
     {
         /// <summary>
         /// Наименование банка.

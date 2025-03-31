@@ -7,7 +7,7 @@ namespace CIS.EDM.Models.Seller
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/96a565c13bd5dd139748898fdadf6e5468e5d645/#dst101058">Транспортная накладная.</see>
     /// </summary>
     /// <value><b>ТранНакл</b> - сокращенное наименование (код) элемента.</value>
-    public class Waybill
+    public record Waybill
     {
         /// <summary>
         /// Номер транспортной накладной.

@@ -4,7 +4,7 @@
     /// Сведения о <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/a61ab3a041046ac3f673fe355466c9d6a068cd13/#dst102005">лице, принявшем товары (груз).</see>
     /// </summary>
     /// <value><b>СвЛицПрин</b> - сокращенное наименование (код) элемента.</value>
-    public class ReceiverPerson
+    public record ReceiverPerson
     {
         /// <summary>
         /// Работник организации покупателя.

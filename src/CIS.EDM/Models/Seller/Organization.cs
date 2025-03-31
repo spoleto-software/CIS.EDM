@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller
     /// <summary>
     /// Сведения об <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/16b342f62e586e98d5a0ca3b77fdb6cfb57fdf12/#dst101202">участнике факта хозяйственной жизни.</see>
     /// </summary>
-    public class Organization
+    public record Organization
     {
         /// <summary>
         /// ФНС идентификатор участника электронного документоооборота.

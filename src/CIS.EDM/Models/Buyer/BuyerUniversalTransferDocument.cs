@@ -1,28 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using CIS.EDM.Models.Reference;
+using CIS.EDM.Models.Common;
+using CIS.EDM.Models.Common.Buyer;
+using CIS.EDM.Models.Common.Reference;
 using CIS.EDM.Models.Seller;
 
 namespace CIS.EDM.Models.Buyer
 {
     /// <summary>
-    /// Информация покупателя УПД согласно <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/042ba1c6d0cfc8bc7fb2b7b3a089f50826006b94/">приказу ФНС России от 19.12.2018 № ММВ-7-15/820@</see>.
+    /// Информация покупателя УПД согласно <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/042ba1c6d0cfc8bc7fb2b7b3a089f50826006b94/">приказа ФНС России от 19.12.2018 № ММВ-7-15/820@</see>.
     /// </summary>
     /// <value><b>Файл</b> - сокращенное наименование (код) элемента.</value>
-    public class BuyerUniversalTransferDocument : UniversalTransferDocumentBase
-    {
+    [Obsolete("Use CIS.EDM.Models.V5_03.Buyer.BuyerUniversalTransferDocument with format 5.03")]
+    public record BuyerUniversalTransferDocument : BuyerUniversalTransferDocumentBase
+	{
 		public const string FileIdPattern = "ON_NSCHFDOPPOK";
 		public const string FileWithProcIdPattern = "ON_NSCHFDOPPOKPROS";
 		public const string FileWithMarkIdPattern = "ON_NSCHFDOPPOKMARK";
 
-        /// <summary>
-        /// Идентификатор электронного документа продавца (не файла).
-        /// </summary>
-        /// <remarks>
-        /// Используется для поиска неподписанного документа в электронном ящике и заполнения свойства <see cref="SellerDocumentInfo"/>.
-        /// </remarks>
-        public string EdmDocumentId { get; set; }
+		/// <summary>
+		/// Версия формата.
+		/// </summary>
+		/// <remarks>
+		/// Принимает значение: 5.01.
+		/// </remarks>
+		/// <value><b>ВерсФорм</b> - сокращенное наименование (код) элемента.</value>
+		public override string FormatVersion { get; set; } = Constants.FormatVersion;
+
+		/// <summary>
+		/// Экономический субъект - составитель файла обмена счета-фактуры (информации продавца).
+		/// </summary>
+		/// <value><b>НаимЭконСубСост</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
+		public Organization DocumentCreator { get; set; }
+
+		/// <summary>
+		/// Основание, по которому экономический субъект является составителем файла обмена счета-фактуры (информации продавца).
+		/// </summary>
+		/// <remarks>
+		/// Обязателен, если <see cref="DocumentCreator"> составитель информации покупателя</see> не является покупателем.
+		/// </remarks>
+		/// <value><b>ОснДоверОргСост</b> - сокращенное наименование (код) элемента.</value>
+		public string DocumentCreatorBase { get; set; }
+
+		/// <summary>
+		/// Идентификатор электронного документа продавца (не файла).
+		/// </summary>
+		/// <remarks>
+		/// Используется для поиска неподписанного документа в электронном ящике и заполнения свойства <see cref="SellerDocumentInfo"/>.
+		/// </remarks>
+		public string EdmDocumentId { get; set; }
 
         /// <summary>
         /// Код документа по КНД
@@ -33,15 +61,6 @@ namespace CIS.EDM.Models.Buyer
         /// <value><b>КНД</b> - сокращенное наименование (код) элемента.</value>
         [Required]
         public string TaxDocumentCode { get; set; } = "1115132";
-
-        /// <summary>
-        /// Основание, по которому экономический субъект является составителем файла обмена счета-фактуры (информации продавца).
-        /// </summary>
-        /// <remarks>
-        /// Обязателен, если <see cref="UniversalTransferDocumentBase.DocumentCreator"> составитель информации покупателя</see> не является покупателем.
-        /// </remarks>
-        /// <value><b>ОснДоверОргСост</b> - сокращенное наименование (код) элемента.</value>
-        public string DocumentCreatorBase { get; set; }
 
         /// <summary>
         /// Идентификация файла обмена счета-фактуры (информации продавца) или файла обмена информации продавца
@@ -113,18 +132,19 @@ namespace CIS.EDM.Models.Buyer
         /// <summary>
         /// Получение типа УПД.
         /// </summary>
-        protected override TransferDocumentType GetTransferDocumentType()
+        protected override List<TransferDocumentType> GetTransferDocumentTypes()
         {
-            if (SellerDocumentInfo is SellerDocumentInfo sellerDocumentInfo)
-            {
-                if (sellerDocumentInfo.FileId.StartsWith(SellerUniversalTransferDocument.FileWithMarkIdPattern))
-                    return TransferDocumentType.Mark;
+            var types = new List<TransferDocumentType> { TransferDocumentType.Mark };
+            //if (SellerDocumentInfo is SellerDocumentInfo sellerDocumentInfo)
+            //{
+            //    if (sellerDocumentInfo.FileId.StartsWith(SellerUniversalTransferDocument.FileWithMarkIdPattern))
+            //        types.Add(TransferDocumentType.Mark);
 
-                if (sellerDocumentInfo.FileId.StartsWith(SellerUniversalTransferDocument.FileWithProcIdPattern))
-                    return TransferDocumentType.Proc;
-            }
+            //    if (sellerDocumentInfo.FileId.StartsWith(SellerUniversalTransferDocument.FileWithProcIdPattern))
+            //        types.Add(TransferDocumentType.Proc);
+            //}
 
-            return TransferDocumentType.Default;
+            return types;
         }
 
         /// <summary>
@@ -132,7 +152,9 @@ namespace CIS.EDM.Models.Buyer
         /// </summary>
         protected override string GetFileId()
         {
-            var pattern = TransferDocumentType switch
+			var type = TransferDocumentTypes[0];
+
+			var pattern = type switch
             {
                 TransferDocumentType.Default => FileIdPattern,
                 TransferDocumentType.Proc => FileWithProcIdPattern,
@@ -141,6 +163,6 @@ namespace CIS.EDM.Models.Buyer
             };
 
             return $"{pattern}_{RecipientEdmParticipant.FullId}_{SenderEdmParticipant.FullId}_{DateCreation:yyyyMMdd}_{Guid.NewGuid():D}";
-        }
-    }
+		}
+	}
 }

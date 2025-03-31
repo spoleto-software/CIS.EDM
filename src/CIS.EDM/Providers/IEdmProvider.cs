@@ -19,7 +19,7 @@ namespace CIS.EDM.Providers
 
         /// <summary>
         /// Отправка универсального передаточного документа (УПД) в формате приказа "№820".
-        /// Метод загрузки файла информации продавца УПД согласно приказу 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
+        /// Метод загрузки файла информации продавца УПД согласно приказа 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
         /// </summary>
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
@@ -30,7 +30,7 @@ namespace CIS.EDM.Providers
 
         /// <summary>
         /// Асинхронная отправка универсального передаточного документа (УПД) в формате приказа "№820".
-        /// Метод загрузки файла информации продавца УПД согласно приказу 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
+        /// Метод загрузки файла информации продавца УПД согласно приказа 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
         /// </summary>
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
@@ -38,30 +38,68 @@ namespace CIS.EDM.Providers
         /// <returns>Информация об отправке сообщения.</returns>
         Task<ResultInfo> PostUniversalTransferDocumentAsync(T settings, SellerUniversalTransferDocument dataContract, bool isDraft = false);
 
-        /// <summary>
-        /// Добавление извещения о получении к документу
-        /// </summary>
-        /// <param name="settings">Настройки для API.</param>
-        /// <param name="dataContract">Информация покупателя.</param>
-        /// <returns>Идентификатор созданного извещения о получении</returns>
-        ResultInfo ReceiptUniversalTransferDocument(T settings, BuyerUniversalTransferDocument dataContract)
+		/// <summary>
+		/// Отправка универсального передаточного документа (УПД) в формате приказа "№970".
+		/// Метод загрузки файла информации продавца УПД согласно приказа ФНС России от 19.12.2023 N ЕД-7-26/970@ (ред. от 15.11.2024) в формате XML
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация продавца.</param>
+		/// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
+		/// <returns>Информация об отправке сообщения.</returns>
+		ResultInfo PostUniversalTransferDocument(T settings, CIS.EDM.Models.V5_03.Seller.SellerUniversalTransferDocument dataContract, bool isDraft = false)
+			=> PostUniversalTransferDocumentAsync(settings, dataContract, isDraft).GetAwaiter().GetResult();
+
+		/// <summary>
+		/// Асинхронная отправка универсального передаточного документа (УПД) в формате приказа "№970".
+		/// Метод загрузки файла информации продавца УПД согласно приказа ФНС России от 19.12.2023 N ЕД-7-26/970@ (ред. от 15.11.2024) в формате XML
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация продавца.</param>
+		/// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
+		/// <returns>Информация об отправке сообщения.</returns>
+		Task<ResultInfo> PostUniversalTransferDocumentAsync(T settings, CIS.EDM.Models.V5_03.Seller.SellerUniversalTransferDocument dataContract, bool isDraft = false);
+
+		/// <summary>
+		/// Добавление извещения о получении к документу в формате приказа "№820".
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация покупателя.</param>
+		/// <returns>Идентификатор созданного извещения о получении</returns>
+		ResultInfo ReceiptUniversalTransferDocument(T settings, BuyerUniversalTransferDocument dataContract)
             => ReceiptUniversalTransferDocumentAsync(settings, dataContract).GetAwaiter().GetResult();
 
-        /// <summary>
-        /// Асинхронное добавление извещения о получении к документу
-        /// </summary>
-        /// <param name="settings">Настройки для API.</param>
-        /// <param name="dataContract">Информация покупателя.</param>
-        /// <returns>Идентификатор созданного извещения о получении</returns>
-        Task<ResultInfo> ReceiptUniversalTransferDocumentAsync(T settings, BuyerUniversalTransferDocument dataContract);
+		/// <summary>
+		/// Асинхронное добавление извещения о получении к документу в формате приказа "№820".
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация покупателя.</param>
+		/// <returns>Идентификатор созданного извещения о получении</returns>
+		Task<ResultInfo> ReceiptUniversalTransferDocumentAsync(T settings, BuyerUniversalTransferDocument dataContract);
 
-        /// <summary>
-        /// Получение содержимого XML входящего документа
-        /// </summary>
-        /// <param name="settings">Настройки для API</param>
-        /// <param name="documentId">Идентификатор документа</param>
-        /// <returns>Содержимое XML входящего документа</returns>
-        string GetIncomingDocument(T settings, string documentId)
+		/// <summary>
+		/// Добавление извещения о получении к документу в формате приказа "№970".
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация покупателя.</param>
+		/// <returns>Идентификатор созданного извещения о получении</returns>
+		ResultInfo ReceiptUniversalTransferDocument(T settings, CIS.EDM.Models.V5_03.Buyer.BuyerUniversalTransferDocument dataContract)
+			=> ReceiptUniversalTransferDocumentAsync(settings, dataContract).GetAwaiter().GetResult();
+
+		/// <summary>
+		/// Асинхронное добавление извещения о получении к документу в формате приказа "№970".
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация покупателя.</param>
+		/// <returns>Идентификатор созданного извещения о получении</returns>
+		Task<ResultInfo> ReceiptUniversalTransferDocumentAsync(T settings, CIS.EDM.Models.V5_03.Buyer.BuyerUniversalTransferDocument dataContract);
+
+		/// <summary>
+		/// Получение содержимого XML входящего документа
+		/// </summary>
+		/// <param name="settings">Настройки для API</param>
+		/// <param name="documentId">Идентификатор документа</param>
+		/// <returns>Содержимое XML входящего документа</returns>
+		string GetIncomingDocument(T settings, string documentId)
             => GetIncomingDocumentAsync(settings, documentId).GetAwaiter().GetResult();
 
         /// <summary>
@@ -127,10 +165,16 @@ namespace CIS.EDM.Providers
         Task<ResultInfo> IEdmProvider.PostUniversalTransferDocumentAsync(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft)
             => PostUniversalTransferDocumentAsync((T)settings, dataContract, isDraft);
 
-        Task<ResultInfo> IEdmProvider.ReceiptUniversalTransferDocumentAsync(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
+		Task<ResultInfo> IEdmProvider.PostUniversalTransferDocumentAsync(IEdmOption settings, CIS.EDM.Models.V5_03.Seller.SellerUniversalTransferDocument dataContract, bool isDraft)
+			=> PostUniversalTransferDocumentAsync((T)settings, dataContract, isDraft);
+
+		Task<ResultInfo> IEdmProvider.ReceiptUniversalTransferDocumentAsync(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
             => ReceiptUniversalTransferDocumentAsync((T)settings, dataContract);
 
-        Task<string> IEdmProvider.GetIncomingDocumentAsync(IEdmOption settings, string documentId)
+		Task<ResultInfo> IEdmProvider.ReceiptUniversalTransferDocumentAsync(IEdmOption settings, CIS.EDM.Models.V5_03.Buyer.BuyerUniversalTransferDocument dataContract)
+			=> ReceiptUniversalTransferDocumentAsync((T)settings, dataContract);
+
+		Task<string> IEdmProvider.GetIncomingDocumentAsync(IEdmOption settings, string documentId)
             => GetIncomingDocumentAsync((T)settings, documentId);
 
         Task<DocumentCollection> IEdmProvider.GetIncomingDocumentListAsync(IEdmOption settings, DocumentCollectionSearchModel searchModel)
@@ -165,7 +209,7 @@ namespace CIS.EDM.Providers
 
         /// <summary>
         /// Отправка универсального передаточного документа (УПД) в формате приказа "№820".
-        /// Метод загрузки файла информации продавца УПД согласно приказу 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
+        /// Метод загрузки файла информации продавца УПД согласно приказа 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
         /// </summary>
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
@@ -176,7 +220,7 @@ namespace CIS.EDM.Providers
 
         /// <summary>
         /// Асинхронная отправка универсального передаточного документа (УПД) в формате приказа "№820".
-        /// Метод загрузки файла информации продавца УПД согласно приказу 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
+        /// Метод загрузки файла информации продавца УПД согласно приказа 820 от 19.12.2018 № ММВ-7-15/820@ в формате XML
         /// </summary>
         /// <param name="settings">Настройки для API.</param>
         /// <param name="dataContract">Информация продавца.</param>
@@ -184,13 +228,36 @@ namespace CIS.EDM.Providers
         /// <returns>Информация об отправке сообщения.</returns>
         Task<ResultInfo> PostUniversalTransferDocumentAsync(IEdmOption settings, SellerUniversalTransferDocument dataContract, bool isDraft = false);
 
-        /// <summary>
-        /// Добавление извещения о получении к документу
-        /// </summary>
-        /// <param name="settings">Настройки для API.</param>
-        /// <param name="dataContract">Информация покупателя.</param>
-        /// <returns>Идентификатор созданного извещения о получении</returns>
-        ResultInfo ReceiptUniversalTransferDocument(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
+		/// <summary>
+		/// Отправка универсального передаточного документа (УПД) в формате приказа "№970".
+		/// Метод загрузки файла информации продавца УПД согласно приказа ФНС России от 19.12.2023 N ЕД-7-26/970@ (ред. от 15.11.2024) в формате XML
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация продавца.</param>
+		/// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
+		/// <returns>Информация об отправке сообщения.</returns>
+		ResultInfo PostUniversalTransferDocument(IEdmOption settings, CIS.EDM.Models.V5_03.Seller.SellerUniversalTransferDocument dataContract, bool isDraft = false)
+			=> PostUniversalTransferDocumentAsync(settings, dataContract, isDraft).GetAwaiter().GetResult();
+
+		/// <summary>
+		/// Асинхронная отправка универсального передаточного документа (УПД) в формате приказа "№970".
+		/// Метод загрузки файла информации продавца УПД согласно приказа ФНС России от 19.12.2023 N ЕД-7-26/970@ (ред. от 15.11.2024) в формате XML
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация продавца.</param>
+		/// <param name="isDraft">Создать только черновник. Не отправлять документ получателю.</param>
+		/// <returns>Информация об отправке сообщения.</returns>
+		Task<ResultInfo> PostUniversalTransferDocumentAsync(IEdmOption settings, CIS.EDM.Models.V5_03.Seller.SellerUniversalTransferDocument dataContract, bool isDraft = false);
+
+
+
+		/// <summary>
+		/// Добавление извещения о получении к документу
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация покупателя.</param>
+		/// <returns>Идентификатор созданного извещения о получении</returns>
+		ResultInfo ReceiptUniversalTransferDocument(IEdmOption settings, BuyerUniversalTransferDocument dataContract)
             => ReceiptUniversalTransferDocumentAsync(settings, dataContract).GetAwaiter().GetResult();
 
         /// <summary>
@@ -201,13 +268,30 @@ namespace CIS.EDM.Providers
         /// <returns>Идентификатор созданного извещения о получении</returns>
         Task<ResultInfo> ReceiptUniversalTransferDocumentAsync(IEdmOption settings, BuyerUniversalTransferDocument dataContract);
 
-        /// <summary>
-        /// Получение содержимого XML входящего документа
-        /// </summary>
-        /// <param name="settings">Настройки для API</param>
-        /// <param name="documentId">Идентификатор документа</param>
-        /// <returns>Содержимое XML входящего документа</returns>
-        string GetIncomingDocument(IEdmOption settings, string documentId)
+		/// <summary>
+		/// Добавление извещения о получении к документу
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация покупателя.</param>
+		/// <returns>Идентификатор созданного извещения о получении</returns>
+		ResultInfo ReceiptUniversalTransferDocument(IEdmOption settings, CIS.EDM.Models.V5_03.Buyer.BuyerUniversalTransferDocument dataContract)
+			=> ReceiptUniversalTransferDocumentAsync(settings, dataContract).GetAwaiter().GetResult();
+
+		/// <summary>
+		/// Асинхронное добавление извещения о получении к документу
+		/// </summary>
+		/// <param name="settings">Настройки для API.</param>
+		/// <param name="dataContract">Информация покупателя.</param>
+		/// <returns>Идентификатор созданного извещения о получении</returns>
+		Task<ResultInfo> ReceiptUniversalTransferDocumentAsync(IEdmOption settings, CIS.EDM.Models.V5_03.Buyer.BuyerUniversalTransferDocument dataContract);
+
+		/// <summary>
+		/// Получение содержимого XML входящего документа
+		/// </summary>
+		/// <param name="settings">Настройки для API</param>
+		/// <param name="documentId">Идентификатор документа</param>
+		/// <returns>Содержимое XML входящего документа</returns>
+		string GetIncomingDocument(IEdmOption settings, string documentId)
             => GetIncomingDocumentAsync(settings, documentId).GetAwaiter().GetResult();
 
         /// <summary>

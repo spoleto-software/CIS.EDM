@@ -5,7 +5,7 @@ namespace CIS.EDM.Models
     /// <summary>
     /// Информация об отправке сообщения в систему электронного документооборота.
     /// </summary>
-    public class ResultInfo
+    public record ResultInfo
     {
         /// <summary>
         /// Идентификатор сообщения

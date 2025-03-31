@@ -1,10 +1,12 @@
-﻿namespace CIS.EDM.Models.Seller
+﻿using CIS.EDM.Models.Common;
+
+namespace CIS.EDM.Models.Seller
 {
     /// <summary>
     /// Физическое лицо, которому доверена отгрузка товаров (передача результатов работ), передача имущественных прав (предъявление оказанных услуг).
     /// </summary>
     /// <value><b>ФЛПер</b> - сокращенное наименование (код) элемента.</value>
-    public class TransferPhysicalPerson : Person
+    public record TransferPhysicalPerson : Person
     {
         /// <summary>
         /// Иные сведения, идентифицирующие физическое лицо.

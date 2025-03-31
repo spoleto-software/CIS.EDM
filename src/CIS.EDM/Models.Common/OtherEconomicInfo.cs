@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace CIS.EDM.Models
+namespace CIS.EDM.Models.Common
 {
     /// <summary>
     /// Информационное поле факта хозяйственной жизни.
     /// </summary>
-    public abstract class OtherEconomicInfo
+    public abstract record OtherEconomicInfo
     {
         /// <summary>
         /// Идентификатор файла информационного поля

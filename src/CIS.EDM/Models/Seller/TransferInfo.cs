@@ -8,7 +8,7 @@ namespace CIS.EDM.Models.Seller
     /// Сведения о <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/c39b706f963d1abfd657df7d5616a1774d026726/#dst100850">передаче (сдаче) товаров (результатов работ)</see>, имущественных прав (о предъявлении оказанных услуг).
     /// </summary>
     /// <value><b>СвПер</b> - сокращенное наименование (код) элемента.</value>
-    public class TransferInfo
+    public record TransferInfo
     {
         /// <summary>
         /// Содержание операции.

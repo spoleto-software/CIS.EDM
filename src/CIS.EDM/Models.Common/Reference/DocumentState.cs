@@ -1,4 +1,4 @@
-﻿namespace CIS.EDM.Models.Reference
+﻿namespace CIS.EDM.Models.Common.Reference
 {
     /// <summary>
     /// Справочник "Статусы документов

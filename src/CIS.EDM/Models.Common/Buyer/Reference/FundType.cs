@@ -1,7 +1,7 @@
-﻿namespace CIS.EDM.Models.Buyer.Reference
+﻿namespace CIS.EDM.Models.Common.Buyer.Reference
 {
     /// <summary>
-    /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/63f732c096106299568374da7a2152105a6050ea/#dst102256">Вид средств.</see>
+    /// Вид средств.
     /// </summary>
     /// <remarks>
     /// Источник средств, за счет которого должна быть произведена кассовая выплата.

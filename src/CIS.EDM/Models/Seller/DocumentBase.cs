@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller
     /// <summary>
     /// Базовый класс для документов.
     /// </summary>
-    public class DocumentBase
+    public record DocumentBase
     {
         /// <summary>
         /// Наименование документа-основания

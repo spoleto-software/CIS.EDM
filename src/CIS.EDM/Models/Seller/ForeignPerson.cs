@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/21e1fe3ec684d130dda83c2952898fd424a666c1/#dst101310">Сведения об иностранном лице, не состоящем на учете в налоговых органах в качестве налогоплательщика.</see>
     /// </summary>
     /// <value><b>СвИнНеУч</b> - сокращенное наименование (код) элемента.</value>
-    public class ForeignPerson
+    public record ForeignPerson
     {
         /// <summary>
         /// Наименование полное.

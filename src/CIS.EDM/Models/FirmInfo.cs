@@ -5,7 +5,7 @@ namespace CIS.EDM.Models
     /// <summary>
     /// Информация о покупателе
     /// </summary>
-    public class FirmInfo
+    public record FirmInfo
     {
         /// <summary>
         /// Идентификатор получателя в системе ЭДО оператора

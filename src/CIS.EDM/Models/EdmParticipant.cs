@@ -3,7 +3,7 @@
     /// <summary>
     /// Сведения об участнике электронного документооборота.
     /// </summary>
-    public class EdmParticipant
+    public record EdmParticipant
     {
         /// <summary>
         /// Конструктор с параметрами

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CIS.EDM.Models.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models.Seller
 {
@@ -6,7 +7,7 @@ namespace CIS.EDM.Models.Seller
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/37c446604d0f3a276038c77ca4f0a88778de30ac/#dst101162">Представитель юридического лица.</see>
     /// </summary>
     /// <value><b>ЮЛ</b> - сокращенное наименование (код) элемента.</value>
-    public class LegalPersonRepresentative : Person
+    public record LegalPersonRepresentative : Person
     {
         /// <summary>
         /// Реквизиты свидетельства о государственной регистрации индивидуального предпринимателя,

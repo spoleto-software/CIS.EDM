@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CIS.EDM.Models.Common.Reference;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models.Seller
@@ -7,7 +8,7 @@ namespace CIS.EDM.Models.Seller
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/ffa5ff79ab54d5ce1ed65d1f6e8effc09d1b06ae/">Сведения об отгруженных товарах (о выполненных работах, оказанных услугах), переданных имущественных правах.</see>
     /// </summary>
     /// <value><b>СведТов</b> - сокращенное наименование (код) элемента.</value>
-    public class InvoiceItem
+    public record InvoiceItem
     {
         /// <summary>
         /// Наименование товара

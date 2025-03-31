@@ -1,4 +1,6 @@
-﻿namespace CIS.EDM.Models.Buyer
+﻿using CIS.EDM.Models.Common;
+
+namespace CIS.EDM.Models.Buyer
 {
     /// <summary>
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/08f8bb6016cbc4090c0016e6698417127ea24046/#dst102297">Сведения о подписанте (информация покупателя).</see>
@@ -21,7 +23,7 @@
     /// </list>
     /// </remarks>
     /// <value><b>ФЛ, ИП, ЮЛ</b> - сокращенное наименование (код) элемента.</value>
-    public abstract class SignerPersonBase : Person
+    public abstract record SignerPersonBase : Person
     {
         /// <summary>
         /// Иные сведения, идентифицирующие физическое лицо.

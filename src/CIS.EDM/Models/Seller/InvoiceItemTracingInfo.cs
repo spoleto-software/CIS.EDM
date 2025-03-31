@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller
     /// Сведения о товаре, подлежащем <see href="https://www.consultant.ru/document/cons_doc_LAW_316356/9e462a44b62c07e3b89bb3092b20ef24f5420e32/">прослеживаемости</see>.
     /// </summary>
     /// <value><b>СведПрослеж</b> - сокращенное наименование (код) элемента.</value>
-    public class InvoiceItemTracingInfo
+    public record InvoiceItemTracingInfo
     {
         /// <summary>
         /// Регистрационный номер партии товаров

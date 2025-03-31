@@ -1,4 +1,4 @@
-﻿namespace CIS.EDM.Models.Seller
+﻿namespace CIS.EDM.Models.Common.Reference
 {
     /// <summary>
     /// Налоговая ставка.

@@ -1,10 +1,12 @@
-﻿namespace CIS.EDM.Models.Seller
+﻿using CIS.EDM.Models.Common;
+
+namespace CIS.EDM.Models.Seller
 {
     /// <summary>
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/798fbbf5ce2fcd4aceb36ed5066c5ad9428e8f79/#dst101491">Сведения об индивидуальном предпринимателе.</see>
     /// </summary>
     /// <value><b>ИП</b> - сокращенное наименование (код) элемента.</value>
-    public class IndividualEntrepreneur : Person
+    public record IndividualEntrepreneur : Person
     {
         /// <summary>
         /// ИНН

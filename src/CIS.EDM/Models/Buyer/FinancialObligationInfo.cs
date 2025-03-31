@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using CIS.EDM.Models.Buyer.Reference;
+using CIS.EDM.Models.Common.Buyer.Reference;
 
 namespace CIS.EDM.Models.Buyer
 {
@@ -7,7 +7,7 @@ namespace CIS.EDM.Models.Buyer
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/63f732c096106299568374da7a2152105a6050ea/#dst102256">Информация для сведений о денежном обязательстве.</see>
     /// </summary>
     /// <value><b>ИнфСведДенОбяз</b> - сокращенное наименование (код) элемента.</value>
-    public class FinancialObligationInfo
+    public record FinancialObligationInfo
     {
         /// <summary>
         /// Номер строки таблицы информации продавца.

@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/bffc48fb198f56b56328b22219190b36c8a03983/#dst101279">Сведения о юридическом лице, состоящем на учете в налоговых органах.</see>
     /// </summary>
     /// <value><b>СвЮЛУч</b> - сокращенное наименование (код) элемента.</value>
-    public class LegalPerson
+    public record LegalPerson
     {
         /// <summary>
         /// Наименование полное.

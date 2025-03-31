@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using CIS.EDM.JsonConverters;
-using CIS.EDM.Models.Reference;
+using CIS.EDM.Models.Common.Reference;
 
 namespace CIS.EDM.Models
 {
     /// <summary>
     /// Информация о последнем документе
     /// </summary>
-    public class Document
+    public record Document
     {
         /// <summary>
         /// Идентификатор последнего документа цепочки

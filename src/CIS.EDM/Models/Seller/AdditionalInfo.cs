@@ -7,7 +7,7 @@ namespace CIS.EDM.Models.Seller
     /// Дополнительные сведения об <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/2fceb17c7e6af54052d079494238454102f38a65/#dst100652">отгруженных товарах</see> (выполненных работах, оказанных услугах), переданных имущественных правах.
     /// </summary>
     /// <value><b>ДопСведТов</b> - сокращенное наименование (код) элемента.</value>
-    public class AdditionalInfo
+    public record AdditionalInfo
     {
         /// <summary>
         /// Признак

@@ -25,7 +25,7 @@
     /// </list>
     /// </remarks>
     /// <value><b>ИдСв</b> - сокращенное наименование (код) элемента.</value>
-    public class OrganizationIdentificationInfo
+    public record OrganizationIdentificationInfo
     {
         /// <summary>
         /// Сведения об индивидуальном предпринимателе.

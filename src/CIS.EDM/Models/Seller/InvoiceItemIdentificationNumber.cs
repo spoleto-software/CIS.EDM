@@ -8,7 +8,7 @@ namespace CIS.EDM.Models.Seller
     /// Номер средств <see href="https://www.consultant.ru/document/cons_doc_LAW_316356/278c40ea9d936ea9302c20ff1debe7a95a606a0e/">идентификации товаров</see> (информация о маркировке).
     /// </summary>
     /// <value><b>НомСредИдентТов</b> - сокращенное наименование (код) элемента.</value>
-    public class InvoiceItemIdentificationNumber
+    public record InvoiceItemIdentificationNumber
     {
         /// <summary>
         /// Уникальный идентификатор транспортной упаковки

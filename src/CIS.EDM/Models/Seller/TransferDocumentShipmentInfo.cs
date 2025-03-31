@@ -10,7 +10,7 @@ namespace CIS.EDM.Models.Seller
     /// Документ об отгрузке (графа 5а в счёт-фактуре).
     /// </remarks>
     /// <value><b>ДокПодтвОтгр</b> - сокращенное наименование (код) элемента.</value>
-    public class TransferDocumentShipmentInfo
+    public record TransferDocumentShipmentInfo
     {
         /// <summary>
         /// Наименование документа об отгрузке

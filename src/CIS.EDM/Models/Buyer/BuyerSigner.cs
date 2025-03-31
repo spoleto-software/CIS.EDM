@@ -24,7 +24,7 @@ namespace CIS.EDM.Models.Buyer
     /// </list>
     /// </remarks>
     /// <value><b>Подписант</b> - сокращенное наименование (код) элемента.</value>
-    public class BuyerSigner
+    public record BuyerSigner
     {
         /// <summary>
         /// Область полномочий.

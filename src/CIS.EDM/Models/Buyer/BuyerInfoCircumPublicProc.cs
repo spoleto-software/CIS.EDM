@@ -14,7 +14,7 @@ namespace CIS.EDM.Models.Buyer
     /// и (или) для формирования сведений о денежном обязательстве Федеральным казначейством.
     /// </remarks>
     /// <value><b>ИнфПокГосЗакКазн</b> - сокращенное наименование (код) элемента.</value>
-    public class BuyerInfoCircumPublicProc
+    public record BuyerInfoCircumPublicProc
     {
         /// <summary>
         /// Идентификационный код закупки.

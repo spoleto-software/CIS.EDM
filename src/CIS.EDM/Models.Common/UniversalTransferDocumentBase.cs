@@ -1,16 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using CIS.EDM.Models.Reference;
+using CIS.EDM.Models.Common.Reference;
 using CIS.EDM.Models.Seller;
 
-namespace CIS.EDM.Models
+namespace CIS.EDM.Models.Common
 {
     /// <summary>
     /// Базовый класс для УПД.
     /// </summary>
-    public abstract class UniversalTransferDocumentBase
+    public abstract record UniversalTransferDocumentBase
     {
-        private TransferDocumentType? _manualTransferDocumentType;
+        private List<TransferDocumentType> _manualTransferDocumentTypes;
         private string _fileId;
 
         /// <summary>
@@ -22,16 +23,21 @@ namespace CIS.EDM.Models
         }
 
         /// <summary>
-        /// Тип УПД.<br/>
-        /// Общий случай либо товары, подлежащие маркировке либо прослеживаемости.
+        /// Тип участника.
         /// </summary>
-        /// <remarks>
-        /// Если не передать, то заполнится автоматом.
-        /// </remarks>
-        public TransferDocumentType TransferDocumentType
+		public abstract PartyType PartyType { get; }
+
+		/// <summary>
+		/// Типы УПД.<br/>
+		/// Общий случай либо товары, подлежащие маркировке, прослеживаемости.
+		/// </summary>
+		/// <remarks>
+		/// Если не передать, то заполнится автоматом.
+		/// </remarks>
+		public List<TransferDocumentType> TransferDocumentTypes
         {
-            get => _manualTransferDocumentType ?? GetTransferDocumentType();
-            set => _manualTransferDocumentType = value;
+            get => _manualTransferDocumentTypes ??= GetTransferDocumentTypes();
+            set => _manualTransferDocumentTypes = value;
         }
 
         /// <summary>
@@ -52,10 +58,8 @@ namespace CIS.EDM.Models
         /// Версия формата.
         /// </summary>
         /// <remarks>
-        /// Принимает значение: 5.01.
-        /// </remarks>
         /// <value><b>ВерсФорм</b> - сокращенное наименование (код) элемента.</value>
-        public string FormatVersion { get; set; } = Constants.FormatVersion;
+        public abstract string FormatVersion { get; set; }
 
         /// <summary>
         /// Версия программы, с помощью которой сформирован файл.
@@ -91,16 +95,9 @@ namespace CIS.EDM.Models
         public DateTime DateCreation { get; }
 
         /// <summary>
-        /// Экономический субъект - составитель файла обмена счета-фактуры (информации продавца).
-        /// </summary>
-        /// <value><b>НаимЭконСубСост</b> - сокращенное наименование (код) элемента.</value>
-        [Required]
-        public Organization DocumentCreator { get; set; }
-
-        /// <summary>
         /// Получение типа УПД.
         /// </summary>
-        protected abstract TransferDocumentType GetTransferDocumentType();
+        protected abstract List<TransferDocumentType> GetTransferDocumentTypes();
 
         /// <summary>
         /// Получение идентификатора файла.

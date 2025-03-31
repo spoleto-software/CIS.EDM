@@ -8,7 +8,7 @@ namespace CIS.EDM.Models.Seller
     /// (для учета Федеральным казначейством денежных обязательств).
     /// </summary>
     /// <value><b>ИнфПродГосЗакКазн</b> - сокращенное наименование (код) элемента.</value>
-    public class SellerInfoCircumPublicProc
+    public record SellerInfoCircumPublicProc
     {
         /// <summary>
         /// Дата государственного контракта.

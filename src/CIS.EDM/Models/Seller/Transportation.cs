@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Seller
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/1d2dfaff3f9a46147ca5113dec6593d495bb9b4d/#dst101035">Транспортировка и груз.</see>
     /// </summary>
     /// <value><b>ТранГруз</b> - сокращенное наименование (код) элемента.</value>
-    public class Transportation
+    public record Transportation
     {
         /// <summary>
         /// Сведения о транспортировке и грузе

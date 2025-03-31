@@ -24,7 +24,7 @@ namespace CIS.EDM.Models.Seller
     /// </list>
     /// </remarks>
     /// <value><b>Подписант</b> - сокращенное наименование (код) элемента.</value>
-    public class SellerSigner
+    public record SellerSigner
     {
         /// <summary>
         /// Область полномочий.

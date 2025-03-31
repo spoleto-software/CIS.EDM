@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 using CIS.EDM.JsonConverters;
-using CIS.EDM.Models.Reference;
+using CIS.EDM.Models.Common.Reference;
 
 namespace CIS.EDM.Models
 {
     /// <summary>
     /// Информация о документе в системе ЭДО оператора
     /// </summary>
-    public class DocumentInfo
+    public record DocumentInfo
     {
         /// <summary>
         /// Идентификатор документа в системе ЭДО оператора

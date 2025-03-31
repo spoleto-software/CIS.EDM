@@ -8,7 +8,7 @@ namespace CIS.EDM.Models.Buyer
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/87d4700fa0bed4fa2cdc53a5b6d8d00338147665/#dst101964">Код содержания операции.</see>
     /// </summary>
     /// <value><b>КодСодОпер</b> - сокращенное наименование (код) элемента.</value>
-    public class OperationNameInfo
+    public record OperationNameInfo
     {
         /// <summary>
         /// Код, обозначающий итог приемки товара (работ, услуг, прав).

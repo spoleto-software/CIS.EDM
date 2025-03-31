@@ -10,7 +10,7 @@ namespace CIS.EDM.Models
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/15d3bdcafb5f8941543b641722ad831b62fba547/">Информация покупателя.</see>
     /// </remarks>
     /// <value><b>СвОЭДОтпр</b> - сокращенное наименование (код) элемента.</value>
-    public class EdmOperator
+    public record EdmOperator
     {
         /// <summary>
         /// Наименование.

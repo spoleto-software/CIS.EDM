@@ -4,7 +4,7 @@
     /// Сведения о <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/dc1636ba54dbcf2b1f4e8f02a3aa2343f94fe44f/#dst100626">таможенной декларации</see>.
     /// </summary>
     /// <value><b>СвТД</b> - сокращенное наименование (код) элемента.</value>
-    public class CustomsDeclaration
+    public record CustomsDeclaration
     {
         /// <summary>
         /// Цифровой код страны происхождения товара (Графа 10 счета-фактуры).

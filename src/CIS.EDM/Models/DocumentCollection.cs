@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace CIS.EDM.Models
 {
-	public class DocumentCollection
+	public record DocumentCollection
 	{
 		/// <summary>
 		/// Информация о последнем документе

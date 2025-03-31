@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CIS.EDM.Models.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models
 {
     /// <summary>
     /// Сотрудник организации.
     /// </summary>
-    public class Employee : Person
+    public record Employee : Person
     {
         /// <summary>
         /// Должность

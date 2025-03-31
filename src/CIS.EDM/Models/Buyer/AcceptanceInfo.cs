@@ -6,7 +6,7 @@ namespace CIS.EDM.Models.Buyer
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/c5c4a3610ba495eb4e6f68f0d40e37198f674a27/#dst101934">Сведения о принятии товаров (результатов выполненных работ), имущественных прав (о подтверждении факта оказания услуг).</see>
     /// </summary>
     /// <value><b>СвПрин</b> - сокращенное наименование (код) элемента.</value>
-    public class AcceptanceInfo
+    public record AcceptanceInfo
     {
         /// <summary>
         /// Содержание операции (текст).

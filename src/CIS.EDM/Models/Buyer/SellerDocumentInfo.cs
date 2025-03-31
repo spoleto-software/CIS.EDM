@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using CIS.EDM.Models.Reference;
+using CIS.EDM.Models.Common.Reference;
 
 namespace CIS.EDM.Models.Buyer
 {
@@ -9,7 +9,7 @@ namespace CIS.EDM.Models.Buyer
     /// А также информация из файла продавца для <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/02673efb25bdf306681c4aa4bff1844a7e7d9ac8/#dst101886">некоторых атрибутов СодФХЖ4.</see>
     /// </summary>
     /// <value><b>ИдИнфПрод, СодФХЖ4</b> - сокращенное наименование (код) элемента.</value>
-    public class SellerDocumentInfo
+    public record SellerDocumentInfo
     {
         /// <summary>
         /// Идентификатор файла обмена информации продавца.
