@@ -80,31 +80,9 @@ namespace CIS.EDM.Models.Seller
 		public string RevisionNumber { get; set; }
 
 		/// <summary>
-		/// Исправление: N (при составлении документа с Функция=СЧФ или Функция=СЧФДОП до внесения в него исправлений)
-		/// </summary>
-		/// <remarks>
-		/// Принимает значение "-" (дефис) (визуализируется как прочерк).
-		/// <para>При наличии <see cref="RevisionDate"/> не формируется.</para>
-		/// Обязателен при отсутствии <see cref="RevisionNumber"/>.
-		/// </remarks>
-		/// <value><b>ДефНомИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
-		public bool IsHyphenRevisionNumber => string.IsNullOrEmpty(RevisionNumber);
-
-		/// <summary>
 		/// Исправление: Дата
 		/// </summary>
 		/// <value><b>ДатаИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
 		public DateTime? RevisionDate { get; set; }
-
-		/// <summary>
-		/// Исправление: Дата (при составлении документа с Функция=СЧФ или Функция=СЧФДОП до внесения в него исправлений)
-		/// </summary>
-		/// <remarks>
-		/// Принимает значение "-" (дефис) (визуализируется как прочерк).
-		/// <para>При наличии <see cref="RevisionDate"/> не формируется.</para>
-		/// Обязателен при отсутствии <see cref="RevisionDate"/>.
-		/// </remarks>
-		/// <value><b>ДефДатаИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
-		public bool IsHyphenRevisionDate => RevisionDate == null;
 	}
 }

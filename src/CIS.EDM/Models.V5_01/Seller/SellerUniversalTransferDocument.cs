@@ -203,6 +203,28 @@ namespace CIS.EDM.Models.V5_01.Seller
 		/// <value><b>СоглСтрДопИнф</b> - сокращенное наименование (код) элемента.</value>
 		public string ApprovedStructureAdditionalInfoFields { get; set; }
 
+		/// <summary>
+		/// Исправление: N (при составлении документа с Функция=СЧФ или Функция=СЧФДОП до внесения в него исправлений)
+		/// </summary>
+		/// <remarks>
+		/// Принимает значение "-" (дефис) (визуализируется как прочерк).
+		/// <para>При наличии <see cref="SellerUniversalTransferDocumentBase.RevisionDate"/> не формируется.</para>
+		/// Обязателен при отсутствии <see cref="SellerUniversalTransferDocumentBase.RevisionNumber"/>.
+		/// </remarks>
+		/// <value><b>ДефНомИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
+		public bool IsHyphenRevisionNumber => string.IsNullOrEmpty(RevisionNumber);
+
+		/// <summary>
+		/// Исправление: Дата (при составлении документа с Функция=СЧФ или Функция=СЧФДОП до внесения в него исправлений)
+		/// </summary>
+		/// <remarks>
+		/// Принимает значение "-" (дефис) (визуализируется как прочерк).
+		/// <para>При наличии <see cref="SellerUniversalTransferDocumentBase.RevisionDate"/> не формируется.</para>
+		/// Обязателен при отсутствии <see cref="SellerUniversalTransferDocumentBase.RevisionDate"/>.
+		/// </remarks>
+		/// <value><b>ДефДатаИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
+		public bool IsHyphenRevisionDate => RevisionDate == null;
+
 		#endregion END Additional properties
 
 		/// <summary>

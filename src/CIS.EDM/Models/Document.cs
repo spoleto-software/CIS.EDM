@@ -7,7 +7,7 @@ using CIS.EDM.Models.Reference;
 namespace CIS.EDM.Models
 {
     /// <summary>
-    /// Информация о последнем документе
+    /// Информация о последнем документе.
     /// </summary>
     public record Document
     {
