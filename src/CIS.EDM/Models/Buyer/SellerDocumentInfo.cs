@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using CIS.EDM.Models.Common.Reference;
+using CIS.EDM.Models.Reference;
 
 namespace CIS.EDM.Models.Buyer
 {
@@ -42,7 +42,7 @@ namespace CIS.EDM.Models.Buyer
         public string TimeCreation { get; set; }
 
         /// <summary>
-        /// Электронная подпись файла обмена информации продавца в кодировке Base64
+        /// Электронная подпись файла обмена информации продавца в кодировке Base64.
         /// </summary>
         /// <value><b>ЭП</b> - сокращенное наименование (код) элемента.</value>
         [Required]

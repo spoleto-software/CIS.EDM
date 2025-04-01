@@ -1,4 +1,4 @@
-﻿using CIS.EDM.Models.Common.Buyer.Reference;
+﻿using CIS.EDM.Models.Buyer.Reference;
 using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models.V5_03.Buyer

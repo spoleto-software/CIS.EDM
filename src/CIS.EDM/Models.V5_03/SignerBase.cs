@@ -1,4 +1,4 @@
-﻿using CIS.EDM.Models.Common;
+﻿using CIS.EDM.Models;
 using CIS.EDM.Models.V5_03.Reference;
 using System;
 using System.ComponentModel.DataAnnotations;

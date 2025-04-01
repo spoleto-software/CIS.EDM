@@ -1,5 +1,5 @@
-﻿using CIS.EDM.Models.Common.Reference;
-using CIS.EDM.Models.Common.Seller;
+﻿using CIS.EDM.Models.Reference;
+using CIS.EDM.Models.Seller;
 using CIS.EDM.Models.V5_03.Seller.Reference;
 using System;
 using System.Collections.Generic;

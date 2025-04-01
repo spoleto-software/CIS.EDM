@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 using CIS.EDM.JsonConverters;
-using CIS.EDM.Models.Common.Reference;
+using CIS.EDM.Models.Reference;
 
 namespace CIS.EDM.Models
 {

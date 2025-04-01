@@ -1,4 +1,4 @@
-﻿using CIS.EDM.Models.Common;
+﻿using CIS.EDM.Models;
 
 namespace CIS.EDM.Extensions
 {
