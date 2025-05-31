@@ -8,11 +8,11 @@ namespace CIS.EDM.Models.V5_03.Seller.Address
     /// <value><b>АдрРФ</b> - сокращенное наименование (код) элемента.</value>
     public record RussianAddress
     {
-        /// <summary>
-        /// Индекс.
-        /// </summary>
-        /// <value><b>Индекс</b> - сокращенное наименование (код) элемента.</value>
-        public string ZipCode { get; set; }
+		/// <summary>
+		/// Почтовый индекс.
+		/// </summary>
+		/// <value><b>Индекс</b> - сокращенное наименование (код) элемента.</value>
+		public string ZipCode { get; set; }
 
 		/// <summary>
 		/// Регион.
@@ -70,9 +70,15 @@ namespace CIS.EDM.Models.V5_03.Seller.Address
         /// <value><b>Кварт</b> - сокращенное наименование (код) элемента.</value>
         public string Apartment { get; set; }
 
-        /// <summary>
-        /// Текстовое представление объекта.
-        /// </summary>
-        public override string ToString() => $"{nameof(RegionCode)}: {RegionCode}. {ZipCode}, {City}, {Street}, {Building} {Block}, {Apartment}";
+		/// <summary>
+		/// Иные сведения об адресе в Российской Федерации.
+		/// </summary>
+		/// <value><b>ИныеСвед</b> - сокращенное наименование (код) элемента.</value>
+		public string OtherInfo { get; set; }
+
+		/// <summary>
+		/// Текстовое представление объекта.
+		/// </summary>
+		public override string ToString() => $"{nameof(RegionCode)}: {RegionCode}. {ZipCode}, {City}, {Street}, {Building} {Block}, {Apartment}";
     }
 }

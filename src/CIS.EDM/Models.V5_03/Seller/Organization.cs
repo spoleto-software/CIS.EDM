@@ -83,7 +83,7 @@ namespace CIS.EDM.Models.V5_03.Seller
 		///     <description>адрес РФ</description>
 		///     </item>
 		///     <item>
-		///         <term><see cref="ForeignAddress"/></term>
+		///         <term><see cref="AddressInformation"/></term>
 		///         <description>адрес за пределами РФ</description>
 		///     </item>
 		///     <item>
