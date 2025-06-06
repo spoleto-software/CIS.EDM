@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace CIS.EDM.Models.V5_03.Seller.Address
 {
-    /// <summary>
-    /// Уникальный номер адреса объекта адресации в государственном адресном реестре
-    /// </summary>
-    public record AddressCode
+	/// <summary>
+	/// Адрес в соответствии с государственным адресным реестром (АдрГАРТип)-
+	/// </summary>
+	public record AddressCode
     {
 		/// <summary>
 		/// Уникальный номер адреса объекта адресации в государственном адресном реестре в виде 36-разрядного GUID

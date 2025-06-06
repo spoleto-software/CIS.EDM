@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models.V5_03
 {
@@ -11,12 +12,14 @@ namespace CIS.EDM.Models.V5_03
 		/// Единый регистрационный номер доверенности.
 		/// </summary>
 		/// <value><b>НомДовер</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
 		public Guid RegistrationNumber { get; set; }
 
 		/// <summary>
 		/// Дата совершения (выдачи) доверенности.
 		/// </summary>
 		/// <value><b>ДатаВыдДовер</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
 		public DateTime IssueDate { get; set; }
 
 		/// <summary>
@@ -38,6 +41,7 @@ namespace CIS.EDM.Models.V5_03
 		/// Идентифицирующая информация об информационной системе, в которой осуществляется хранение доверенности, необходимая для запроса информации из информационной системы.
 		/// </summary>
 		/// <value><b>ИдСистХран</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
 		public string SystemIdentification { get; set; }
 
 		/// <summary>

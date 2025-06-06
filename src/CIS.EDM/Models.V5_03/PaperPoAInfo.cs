@@ -1,5 +1,6 @@
 ﻿using CIS.EDM.Models;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models.V5_03
 {
@@ -12,6 +13,7 @@ namespace CIS.EDM.Models.V5_03
 		/// Дата совершения (выдачи) доверенности.
 		/// </summary>
 		/// <value><b>ДатаВыдДовер</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
 		public DateTime IssueDate { get; set; }
 
 		/// <summary>
@@ -21,6 +23,7 @@ namespace CIS.EDM.Models.V5_03
 		/// При отсутствии номера принимает значение: без номера (б/н).
 		/// </remarks>
 		/// <value><b>ВнНомДовер</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
 		public string InternalNumber { get; set; }
 
 		/// <summary>

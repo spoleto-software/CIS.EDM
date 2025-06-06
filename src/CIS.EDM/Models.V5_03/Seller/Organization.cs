@@ -18,13 +18,13 @@ namespace CIS.EDM.Models.V5_03.Seller
 		/// Код по Общероссийскому классификатору организационно-правовых форм об организационно-правовой форме
 		/// </summary>
 		/// <value><b>КодОПФ</b> - сокращенное наименование (код) элемента.</value>
-		public string Opf { get; set; }
+		public string OpfCode { get; set; }
 
 		/// <summary>
 		/// Полное наименование организационно-правовой формы.
 		/// </summary>
 		/// <value><b>ПолнНаимОПФ</b> - сокращенное наименование (код) элемента.</value>
-		public string FullName { get; set; }
+		public string OpfName { get; set; }
 
 		/// <summary>
 		/// Структурное подразделение.
@@ -59,7 +59,7 @@ namespace CIS.EDM.Models.V5_03.Seller
 		///         <description>Сведения о юридическом лице, состоящем на учете в налоговых органах</description>
 		///     </item>
 		///     <item>
-		///         <term><see cref="ForeignPerson"/></term>
+		///         <term><see cref="ForeignEntity"/></term>
 		///         <description>Сведения об иностранном лице, не состоящем на учете в налоговых органах в качестве налогоплательщика.</description>
 		///     </item>
 		///     <item>

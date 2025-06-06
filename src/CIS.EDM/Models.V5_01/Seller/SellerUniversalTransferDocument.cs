@@ -29,6 +29,21 @@ namespace CIS.EDM.Models.V5_01.Seller
 		public override string FormatVersion { get; set; } = Constants.FormatVersion;
 
 		/// <summary>
+		/// Исправление: N.
+		/// </summary>
+		/// <remarks>
+		/// НомИспрСчФ >= 1.
+		/// </remarks>
+		/// <value><b>НомИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
+		public string RevisionNumber { get; set; }
+
+		/// <summary>
+		/// Исправление: Дата
+		/// </summary>
+		/// <value><b>ДатаИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
+		public DateTime? RevisionDate { get; set; }
+
+		/// <summary>
 		/// Экономический субъект - составитель файла обмена счета-фактуры (информации продавца).
 		/// </summary>
 		/// <value><b>НаимЭконСубСост</b> - сокращенное наименование (код) элемента.</value>
@@ -208,8 +223,8 @@ namespace CIS.EDM.Models.V5_01.Seller
 		/// </summary>
 		/// <remarks>
 		/// Принимает значение "-" (дефис) (визуализируется как прочерк).
-		/// <para>При наличии <see cref="SellerUniversalTransferDocumentBase.RevisionDate"/> не формируется.</para>
-		/// Обязателен при отсутствии <see cref="SellerUniversalTransferDocumentBase.RevisionNumber"/>.
+		/// <para>При наличии <see cref="RevisionDate"/> не формируется.</para>
+		/// Обязателен при отсутствии <see cref="RevisionNumber"/>.
 		/// </remarks>
 		/// <value><b>ДефНомИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
 		public bool IsHyphenRevisionNumber => string.IsNullOrEmpty(RevisionNumber);
@@ -219,8 +234,8 @@ namespace CIS.EDM.Models.V5_01.Seller
 		/// </summary>
 		/// <remarks>
 		/// Принимает значение "-" (дефис) (визуализируется как прочерк).
-		/// <para>При наличии <see cref="SellerUniversalTransferDocumentBase.RevisionDate"/> не формируется.</para>
-		/// Обязателен при отсутствии <see cref="SellerUniversalTransferDocumentBase.RevisionDate"/>.
+		/// <para>При наличии <see cref="RevisionDate"/> не формируется.</para>
+		/// Обязателен при отсутствии <see cref="RevisionDate"/>.
 		/// </remarks>
 		/// <value><b>ДефДатаИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
 		public bool IsHyphenRevisionDate => RevisionDate == null;

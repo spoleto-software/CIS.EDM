@@ -21,6 +21,7 @@ namespace CIS.EDM.Models.V5_03.Seller
         /// <remarks>
         /// </remarks>
         /// <value><b>ИННЮЛ</b> - сокращенное наименование (код) элемента.</value>
+        [Required]
         public string Inn { get; set; }
 
         /// <summary>

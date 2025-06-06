@@ -1,6 +1,4 @@
-﻿using CIS.EDM.Models;
-
-namespace CIS.EDM.Models.V5_03.Buyer
+﻿namespace CIS.EDM.Models.V5_03.Buyer
 {
 	/// <summary>
 	/// <see href="https://www.consultant.ru/document/cons_doc_LAW_468229/c8167b9154e8563f2f704e552be349e55e928aca/">Физическое лицо</see>, которому доверена отгрузка товаров (передача результатов работ), передача имущественных прав (предъявление оказанных услуг).
@@ -18,10 +16,10 @@ namespace CIS.EDM.Models.V5_03.Buyer
 		/// Иные сведения, идентифицирующие физическое лицо.
 		/// </summary>
 		/// <value><b>ИныеСвед</b> - сокращенное наименование (код) элемента.</value>
-		public string PersonInfo { get; set; }
+		public string OtherInfo { get; set; }
 
 		/// <summary>
-		/// Основание, по которому физическому лицу доверена отгрузка товаров (передача результатов работ), передача имущественных прав (предъявление оказанных услуг).
+		/// Основание, по которому физическому лицу доверено принятие товаров.
 		/// </summary>
 		/// <value><b>ОснДоверФЛ</b> - сокращенное наименование (код) элемента.</value>
 		public Document PersonBase { get; set; }

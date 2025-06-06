@@ -46,19 +46,13 @@ namespace CIS.EDM.Models.Seller
 		public DateTime DocumentDate { get; set; }
 
 		/// <summary>
-		/// Валюта: Наименование. НаимОКВ.
+		/// Уникальный идентификатор документа.
 		/// </summary>
 		/// <remarks>
-		/// Код согласно Общероссийскому классификатору валют (ОКВ)
+		/// Выдается государственной информационной системой (при необходимости)
 		/// </remarks>
-		/// <value><b>НаимОКВ</b> - сокращенное наименование (код) элемента.</value>
-		public string CurrencyName { get; set; }
-
-		/// <summary>
-		/// Курс валюты. КурсВал.
-		/// </summary>
-		/// <value><b>КурсВал</b> - сокращенное наименование (код) элемента.</value>
-		public decimal? CurrencyRate { get; set; }
+		/// <value><b>УИД</b> - сокращенное наименование (код) элемента.</value>
+		public string DocumentUid { get; set; }
 
 		/// <summary>
 		/// Валюта: Код (строка 7 счета-фактуры).
@@ -71,18 +65,19 @@ namespace CIS.EDM.Models.Seller
 		public string CurrencyCode { get; set; }
 
 		/// <summary>
-		/// Исправление: N.
+		/// Валюта: Наименование. НаимОКВ.
 		/// </summary>
 		/// <remarks>
-		/// НомИспрСчФ >= 1.
+		/// Код согласно Общероссийскому классификатору валют (ОКВ)
 		/// </remarks>
-		/// <value><b>НомИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
-		public string RevisionNumber { get; set; }
+		/// <value><b>НаимОКВ</b> - сокращенное наименование (код) элемента.</value>
+		[Required]
+		public string CurrencyName { get; set; }
 
 		/// <summary>
-		/// Исправление: Дата
+		/// Курс валюты. КурсВал.
 		/// </summary>
-		/// <value><b>ДатаИспрСчФ</b> - сокращенное наименование (код) элемента.</value>
-		public DateTime? RevisionDate { get; set; }
+		/// <value><b>КурсВал</b> - сокращенное наименование (код) элемента.</value>
+		public decimal? CurrencyRate { get; set; }
 	}
 }

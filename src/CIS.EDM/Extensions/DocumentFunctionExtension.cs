@@ -39,7 +39,9 @@ namespace CIS.EDM.Extensions
                 UniversalTransferDocumentFunction.СЧФ => null,
                 UniversalTransferDocumentFunction.СЧФДОП
                 or UniversalTransferDocumentFunction.ДОП => "Документ об отгрузке товаров (выполнении работ), передаче имущественных прав (документ об оказании услуг)",
-                _ => null,
+                UniversalTransferDocumentFunction.СвРК => "Документ, включающий в себя сведения о факте реализации комиссионером (агентом, действующим от собственного имени) товаров комитента (принципала)",
+                UniversalTransferDocumentFunction.СвЗК => "Документ, включающий в себя сведения о факте закупки комиссионером (агентом, действующим от собственного имени) товаров для комитента (принципала)",
+				_ => null,
             };
         }
     }

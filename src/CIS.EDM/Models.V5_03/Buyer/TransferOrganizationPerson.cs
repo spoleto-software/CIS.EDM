@@ -1,5 +1,4 @@
-﻿using CIS.EDM.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CIS.EDM.Models.V5_03.Buyer
 {
@@ -20,24 +19,30 @@ namespace CIS.EDM.Models.V5_03.Buyer
 		/// Иные сведения, идентифицирующие физическое лицо.
 		/// </summary>
 		/// <value><b>ИныеСвед</b> - сокращенное наименование (код) элемента.</value>
-		public string EmployeeInfo { get; set; }
+		public string OtherInfo { get; set; }
 
 		/// <summary>
 		/// Наименование организации.
 		/// </summary>
-		/// <value><b>НаимОргПер</b> - сокращенное наименование (код) элемента.</value>
+		/// <value><b>НаимОргПрин</b> - сокращенное наименование (код) элемента.</value>
 		[Required]
 		public string OrganizationName { get; set; }
 
 		/// <summary>
 		/// ИНН юридического лица, которому доверен прием
 		/// </summary>
+		/// <remarks>
+		/// Обязателен при отсутствии <see cref="OrganizationBase"/>.
+		/// </remarks>
 		/// <value><b>ИННОргПрин</b> - сокращенное наименование (код) элемента.</value>
 		public string OrganizationInn { get; set; }
 
 		/// <summary>
 		/// Основание, по которому организации доверено принятие товаров (груза).
 		/// </summary>
+		/// <remarks>
+		/// Обязателен при отсутствии <see cref="OrganizationInn"/>.
+		/// </remarks>
 		/// <value><b>ОснДоверОргПрин</b> - сокращенное наименование (код) элемента.</value>
 		public Document OrganizationBase { get; set; }
 

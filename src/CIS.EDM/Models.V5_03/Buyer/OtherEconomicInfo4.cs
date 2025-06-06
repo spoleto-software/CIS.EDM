@@ -1,6 +1,4 @@
-﻿using CIS.EDM.Models;
-
-namespace CIS.EDM.Models.V5_03.Buyer
+﻿namespace CIS.EDM.Models.V5_03.Buyer
 {
 	/// <summary>
 	/// Информационное поле факта хозяйственной жизни 4.

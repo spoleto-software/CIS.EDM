@@ -1,6 +1,5 @@
 ﻿using CIS.EDM.Models.Reference;
 using CIS.EDM.Models.Seller;
-using CIS.EDM.Models.V5_03.Seller.Reference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,6 +23,33 @@ namespace CIS.EDM.Models.V5_03.Seller
 		/// </remarks>
 		/// <value><b>ВерсФорм</b> - сокращенное наименование (код) элемента.</value>
 		public override string FormatVersion { get; set; } = Constants.FormatVersion503;
+
+		/// <summary>
+		/// Имя файла обмена (информации продавца) исправляемого документа.
+		/// </summary>
+		/// <value><b>ИмяФайлИспрПрод</b> - сокращенное наименование (код) элемента.</value>
+		public string CorrectedSellerFileName { get; set; }
+
+		/// <summary>
+		/// Имя файла обмена (информации покупателя) исправляемого документа.
+		/// </summary>
+		/// <value><b>ИмяФайлИспрПок</b> - сокращенное наименование (код) элемента.</value>
+		public string CorrectedBuyerFileName { get; set; }
+
+		/// <summary>
+		/// Исправление: N.
+		/// </summary>
+		/// <remarks>
+		/// НомИспр >= 1.
+		/// </remarks>
+		/// <value><b>НомИспр</b> - сокращенное наименование (код) элемента.</value>
+		public string RevisionNumber { get; set; }
+
+		/// <summary>
+		/// Исправление: Дата
+		/// </summary>
+		/// <value><b>ДатаИспр</b> - сокращенное наименование (код) элемента.</value>
+		public DateTime? RevisionDate { get; set; }
 
 		/// <summary>
 		/// Экономический субъект - составитель файла обмена счета-фактуры (информации продавца).
@@ -86,7 +112,7 @@ namespace CIS.EDM.Models.V5_03.Seller
 		/// Содержание факта хозяйственной жизни 3 - сведения о факте отгрузки товаров (выполнения работ), передачи имущественных прав (о предъявлении оказанных услуг).
 		/// </summary>
 		/// <remarks>
-		/// Документ о переходе права собственности.
+		/// Элемент обязателен при Функция = СЧФДОП | ДОП
 		/// </remarks>
 		/// <value><b>СвПродПер</b> - сокращенное наименование (код) элемента.</value>
 		public TransferInfo TransferInfo { get; set; }
@@ -95,7 +121,7 @@ namespace CIS.EDM.Models.V5_03.Seller
 		/// Реквизиты документов, подтверждающих отгрузку товаров (работ, услуг, имущественных прав)
 		/// </summary>
 		/// <value><b>ДокПодтвОтгр</b> - сокращенное наименование (код) элемента.</value>
-		public List<TransferDocumentShipmentInfo> DocumentShipmentList { get; set; }
+		public List<Document> DocumentShipmentList { get; set; }
 
 		/// <summary>
 		/// Информационное поле факта хозяйственной жизни 1
@@ -110,54 +136,10 @@ namespace CIS.EDM.Models.V5_03.Seller
 		public List<PaymentDocumentInfo> PaymentDocumentInfoList { get; set; }
 
 		/// <summary>
-		/// Идентификатор государственного контракта, договора (соглашения) (строка 8 счета-фактуры). ИдГосКон.
+		/// Дополнительные сведения об участниках факта хозяйственной жизни, основаниях и обстоятельствах его проведения
 		/// </summary>
-		/// <remarks>
-		/// Обязателен при наличии государственного контракта на поставку товаров (выполнение работ, оказание услуг),
-		/// договора (соглашения) о предоставлении из федерального бюджета юридическому лицу субсидий,
-		/// бюджетных инвестиций, взносов в уставный капитал.
-		/// </remarks>
-		/// <value><b>ИдГосКон</b> - сокращенное наименование (код) элемента.</value>
-		public string GovernmentContractInfo { get; set; }
-
-		/// <summary>
-		/// Сведения о факторе (Факторинговая компания)
-		/// </summary>
-		/// <value><b>СвФактор</b> - сокращенное наименование (код) элемента.</value>
-		public Organization FactorInfo { get; set; }
-
-		/// <summary>
-		/// Специальные обстоятельства формирования счета-фактуры, применяемого при расчетах по налогу на добавленную стоимость
-		/// </summary>
-		/// <value><b>ОбстФормСЧФ</b> - сокращенное наименование (код) элемента.</value>
-		public InvoiceFormationType InvoiceFormationType { get; set; }
-
-		/// <summary>
-		/// Специальные обстоятельства формирования универсального передаточного документа, включающего счет-фактуру
-		/// </summary>
-		/// <value><b>СпОбстФСЧФДОП</b> - сокращенное наименование (код) элемента.</value>
-		public string UPDInvoiceFormationType { get; set; }
-
-		/// <summary>
-		/// Специальные обстоятельства формирования документа
-		/// </summary>
-		/// <value><b>СпОбстФДОП</b> - сокращенное наименование (код) элемента.</value>
-		public string UPDFormationType { get; set; }
-
-		/// <summary>
-		/// Информация продавца об обстоятельствах закупок для государственных и муниципальных нужд
-		/// (для учета Федеральным казначейством денежных обязательств)
-		/// </summary>
-		/// <value><b>ИнфПродГосЗакКазн</b> - сокращенное наименование (код) элемента.</value>
-		public SellerInfoCircumPublicProc SellerInfoCircumPublicProc { get; set; }
-
-		/// <summary>
-		/// Основание уступки денежного требования.
-		/// </summary>
-		/// <value><b>ОснУстДенТреб</b> - сокращенное наименование (код) элемента.</value>
-		public MonetaryClaimDocument MainAssignMonetaryClaim { get; set; }
-
-
+		/// <value><b>ДопСвФХЖ1</b> - сокращенное наименование (код) элемента.</value>
+		public AdditionalTransactionParticipantInfo AdditionalTransactionParticipantInfo { get; set; }
 
 		/// <summary>
 		/// Наименование первичного документа, определенное организацией (согласованное сторонами сделки)

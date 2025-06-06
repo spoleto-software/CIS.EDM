@@ -9,7 +9,7 @@ namespace CIS.EDM.Models.V5_01.Seller
     /// </summary>
     /// <value><b>СвПер</b> - сокращенное наименование (код) элемента.</value>
     public record TransferInfo
-    {
+	{
         /// <summary>
         /// Содержание операции.
         /// </summary>

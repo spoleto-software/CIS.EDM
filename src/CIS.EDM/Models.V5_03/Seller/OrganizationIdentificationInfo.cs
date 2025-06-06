@@ -43,7 +43,7 @@
 		/// Сведения об иностранном лице, не состоящем на учете в налоговых органах в качестве налогоплательщика.
 		/// </summary>
 		/// <value><b>СвИнНеУч</b> - сокращенное наименование (код) элемента.</value>
-		public ForeignPerson ForeignPerson { get; set; }
+		public ForeignEntity ForeignPerson { get; set; }
 
 		/// <summary>
 		/// Сведения о физическом лице.

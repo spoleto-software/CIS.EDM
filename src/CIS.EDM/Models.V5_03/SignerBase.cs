@@ -1,5 +1,4 @@
-﻿using CIS.EDM.Models;
-using CIS.EDM.Models.V5_03.Reference;
+﻿using CIS.EDM.Models.V5_03.Reference;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -15,7 +14,6 @@ namespace CIS.EDM.Models.V5_03
 		/// Должность.
 		/// </summary>
 		/// <value><b>Должн</b> - сокращенное наименование (код) элемента.</value>
-		[Required]
 		public string JobTitle { get; set; }
 
 		/// <summary>
@@ -35,13 +33,16 @@ namespace CIS.EDM.Models.V5_03
 		/// </summary>
 		/// <value><b>СпосПодтПолном</b> - сокращенное наименование (код) элемента.</value>
 		[Required]
-		public AuthorityConfirmationType AuthorityConfirmationType { get; set; } // СпосПодтПолном
+		public AuthorityConfirmationType AuthorityConfirmationType { get; set; }
 
 		/// <summary>
 		/// Дополнительные сведения.
 		/// </summary>
+		/// <remarks>
+		/// Дополнительные сведения о подписанте
+		/// </remarks>
 		/// <value><b>ДопСведПодп</b> - сокращенное наименование (код) элемента.</value>
-		public string AdditionalInfo { get; set; } // ДопСведПодп
+		public string AdditionalInfo { get; set; }
 
 		/// <summary>
 		/// Фамилия, имя, отчество (при наличии).
@@ -53,13 +54,19 @@ namespace CIS.EDM.Models.V5_03
 		/// <summary>
 		/// Сведения о доверенности в электронной форме в машиночитаемом виде, используемой для подтверждения полномочий представителя.
 		/// </summary>
+		/// <remarks>
+		/// Элемент обязателен и формируется только при <see cref="AuthorityConfirmationType"/>= <see cref="AuthorityConfirmationType.SystemMachineReadablePoAWithDocInfo"/>.
+		/// </remarks>
 		/// <value><b>СвДоверЭл</b> - сокращенное наименование (код) элемента.</value>
-		public ElectronicPoAInfo? ElectronicPoAInfo { get; set; }
+		public ElectronicPoAInfo ElectronicPoAInfo { get; set; }
 
 		/// <summary>
 		/// Сведения о доверенности в форме документа на бумажном носителе, используемой для подтверждения полномочий представителя.
 		/// </summary>
+		/// <remarks>
+		/// Элемент обязателен и формируется только при <see cref="AuthorityConfirmationType"/>= <see cref="AuthorityConfirmationType.PaperBasedDocument"/>.
+		/// </remarks>
 		/// <value><b>СвДоверБум</b> - сокращенное наименование (код) элемента.</value>
-		public PaperPoAInfo? PaperPoAInfo { get; set; }
+		public PaperPoAInfo PaperPoAInfo { get; set; }
 	}
 }

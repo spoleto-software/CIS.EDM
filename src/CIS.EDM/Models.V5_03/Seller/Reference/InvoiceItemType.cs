@@ -23,7 +23,7 @@
         /// <summary>
         /// услуга 
         /// </summary>
-        Servic = 3,
+        Service = 3,
 
         /// <summary>
         /// имущественные права
