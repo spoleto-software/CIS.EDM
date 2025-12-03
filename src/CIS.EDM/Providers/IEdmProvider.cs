@@ -161,21 +161,38 @@ namespace CIS.EDM.Providers
 		Task<DocumentCollection> GetOutgoingDocumentListAsync(T settings, DocumentCollectionSearchModel searchModel = null);
 
 		/// <summary>
-		/// Получение информации из файла продавца
+		/// Получение информации из входящего файла продавца
 		/// </summary>
 		/// <param name="settings">Настройки для API</param>
 		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
 		/// <returns>Информации из файла продавца</returns>
-		SellerDocumentInfo GetSellerDocumentInfo(T settings, string sellerDocumentId)
-			=> GetSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
+		SellerDocumentInfo GetIncomingSellerDocumentInfo(T settings, string sellerDocumentId)
+			=> GetIncomingSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
 
 		/// <summary>
-		/// Асинхронное получение информации из файла продавца
+		/// Асинхронное получение информации из входящего файла продавца
 		/// </summary>
 		/// <param name="settings">Настройки для API</param>
 		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
 		/// <returns>Информации из файла продавца</returns>
-		Task<SellerDocumentInfo> GetSellerDocumentInfoAsync(T settings, string sellerDocumentId);
+		Task<SellerDocumentInfo> GetIncomingSellerDocumentInfoAsync(T settings, string sellerDocumentId);
+
+		/// <summary>
+		/// Получение информации из исходящего файла продавца
+		/// </summary>
+		/// <param name="settings">Настройки для API</param>
+		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
+		/// <returns>Информации из файла продавца</returns>
+		SellerDocumentInfo GetOutgoingSellerDocumentInfo(T settings, string sellerDocumentId)
+			=> GetOutgoingSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
+
+		/// <summary>
+		/// Асинхронное получение информации из исходящего файла продавца
+		/// </summary>
+		/// <param name="settings">Настройки для API</param>
+		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
+		/// <returns>Информации из файла продавца</returns>
+		Task<SellerDocumentInfo> GetOutgoingSellerDocumentInfoAsync(T settings, string sellerDocumentId);
 
 		Task<ResultInfo> IEdmProvider.PostUniversalTransferDocumentAsync(IEdmOption settings, Models.V5_01.Seller.SellerUniversalTransferDocument dataContract, bool isDraft)
 			=> PostUniversalTransferDocumentAsync((T)settings, dataContract, isDraft);
@@ -201,8 +218,11 @@ namespace CIS.EDM.Providers
 		Task<DocumentCollection> IEdmProvider.GetOutgoingDocumentListAsync(IEdmOption settings, DocumentCollectionSearchModel searchModel)
 			=> GetOutgoingDocumentListAsync((T)settings, searchModel);
 
-		Task<SellerDocumentInfo> IEdmProvider.GetSellerDocumentInfoAsync(IEdmOption settings, string sellerDocumentId)
-			=> GetSellerDocumentInfoAsync((T)settings, sellerDocumentId);
+		Task<SellerDocumentInfo> IEdmProvider.GetIncomingSellerDocumentInfoAsync(IEdmOption settings, string sellerDocumentId)
+			=> GetIncomingSellerDocumentInfoAsync((T)settings, sellerDocumentId);
+
+		Task<SellerDocumentInfo> IEdmProvider.GetOutgoingSellerDocumentInfoAsync(IEdmOption settings, string sellerDocumentId)
+			=> GetOutgoingSellerDocumentInfoAsync((T)settings, sellerDocumentId);
 	}
 
 	/// <summary>
@@ -372,20 +392,37 @@ namespace CIS.EDM.Providers
 		Task<DocumentCollection> GetOutgoingDocumentListAsync(IEdmOption settings, DocumentCollectionSearchModel searchModel = null);
 
 		/// <summary>
-		/// Получение информации из файла продавца
+		/// Получение информации из входящего файла продавца
 		/// </summary>
 		/// <param name="settings">Настройки для API</param>
 		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
 		/// <returns>Информации из файла продавца</returns>
-		SellerDocumentInfo GetSellerDocumentInfo(IEdmOption settings, string sellerDocumentId)
-			=> GetSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
+		SellerDocumentInfo GetIncomingSellerDocumentInfo(IEdmOption settings, string sellerDocumentId)
+			=> GetIncomingSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
 
 		/// <summary>
-		/// Асинхронное получение информации из файла продавца
+		/// Асинхронное получение информации из входящего файла продавца
 		/// </summary>
 		/// <param name="settings">Настройки для API</param>
 		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
 		/// <returns>Информации из файла продавца</returns>
-		Task<SellerDocumentInfo> GetSellerDocumentInfoAsync(IEdmOption settings, string sellerDocumentId);
+		Task<SellerDocumentInfo> GetIncomingSellerDocumentInfoAsync(IEdmOption settings, string sellerDocumentId);
+
+		/// <summary>
+		/// Получение информации из исходящего файла продавца
+		/// </summary>
+		/// <param name="settings">Настройки для API</param>
+		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
+		/// <returns>Информации из файла продавца</returns>
+		SellerDocumentInfo GetOutgoingSellerDocumentInfo(IEdmOption settings, string sellerDocumentId)
+			=> GetOutgoingSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
+
+		/// <summary>
+		/// Асинхронное получение информации из исходящего файла продавца
+		/// </summary>
+		/// <param name="settings">Настройки для API</param>
+		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
+		/// <returns>Информации из файла продавца</returns>
+		Task<SellerDocumentInfo> GetOutgoingSellerDocumentInfoAsync(IEdmOption settings, string sellerDocumentId);
 	}
 }

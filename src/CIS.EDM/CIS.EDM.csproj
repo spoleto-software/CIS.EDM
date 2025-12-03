@@ -36,9 +36,9 @@
 		<PackageTags>EDM; Electronic document management</PackageTags>
 		<Copyright>Copyright © $([System.DateTime]::Now.Year.ToString())</Copyright>
 		<PackageReleaseNotes></PackageReleaseNotes>
-		<Version>5.4.7</Version>
-		<AssemblyVersion>5.4.7.0</AssemblyVersion>
-		<FileVersion>5.4.7.0</FileVersion>
+		<Version>5.4.8</Version>
+		<AssemblyVersion>5.4.8.0</AssemblyVersion>
+		<FileVersion>5.4.8.0</FileVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
