@@ -166,7 +166,8 @@ namespace CIS.EDM.Providers
 		/// <param name="settings">Настройки для API</param>
 		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
 		/// <returns>Информации из файла продавца</returns>
-		SellerDocumentInfo GetSellerDocumentInfo(T settings, string sellerDocumentId);
+		SellerDocumentInfo GetSellerDocumentInfo(T settings, string sellerDocumentId)
+			=> GetSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
 
 		/// <summary>
 		/// Асинхронное получение информации из файла продавца
@@ -376,7 +377,8 @@ namespace CIS.EDM.Providers
 		/// <param name="settings">Настройки для API</param>
 		/// <param name="sellerDocumentId">Идентификатор файла продавца</param>
 		/// <returns>Информации из файла продавца</returns>
-		SellerDocumentInfo GetSellerDocumentInfo(IEdmOption settings, string sellerDocumentId);
+		SellerDocumentInfo GetSellerDocumentInfo(IEdmOption settings, string sellerDocumentId)
+			=> GetSellerDocumentInfoAsync(settings, sellerDocumentId).GetAwaiter().GetResult();
 
 		/// <summary>
 		/// Асинхронное получение информации из файла продавца
