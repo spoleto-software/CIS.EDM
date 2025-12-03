@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using CIS.EDM.Models.Reference;
 
-namespace CIS.EDM.Models.Buyer
+namespace CIS.EDM.Models
 {
     /// <summary>
     /// <see href="http://www.consultant.ru/document/cons_doc_LAW_316356/416a438411c35257004d18fa5ec610a974fb6ca4/#dst101854">Идентификация файла обмена счета-фактуры (информации продавца) или файла обмена информации продавца.</see><br/>
