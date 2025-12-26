@@ -58,6 +58,14 @@
         /// <summary>
         /// "НДС исчисляется налоговым агентом"
         /// </summary>
-        TaxedByAgent
+        TaxedByAgent,
+        /// <summary>
+        /// "22/122"
+        /// </summary>
+        TwentyTwoFraction,
+        /// <summary>
+        /// "22%"
+        /// </summary>
+        TwentyTwoPercent,
     }
 }
