@@ -1,5 +1,7 @@
 # CIS.EDM
 
+Устарел, замена - [Spoleto.Edm](https://github.com/spoleto-software/Spoleto.Edm). Deprecated, use [Spoleto.Edm](https://github.com/spoleto-software/Spoleto.Edm).
+
 [![](https://img.shields.io/github/license/spoleto-software/CIS.EDM)](https://github.com/spoleto-software/CIS.EDM/blob/main/LICENSE)
 [![](https://img.shields.io/nuget/v/Spoleto.CIS.EDM)](https://www.nuget.org/packages/Spoleto.CIS.EDM/)
 ![Build](https://github.com/spoleto-software/CIS.EDM/actions/workflows/publish-to-nuget.yml/badge.svg)
